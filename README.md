@@ -17,7 +17,7 @@ pip install -r requirements.txt
 
 | Mode        | ETH Transfer           | ERC20 Transfer  |
 | ------------- |:-------------:| -----:|
-| Normal Operation      | 21000 | 72000 |
+| Normal Operation      | 21000 | 65000 |
 | Using Transfer Contract      | 30500      |   41000 |
 | Using Transfer with Destruct | 17000      |   23000 |
 
