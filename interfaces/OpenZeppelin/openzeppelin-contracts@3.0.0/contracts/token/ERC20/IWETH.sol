@@ -1,5 +1,6 @@
-pragma solidity ^0.7.0;
+pragma solidity ^0.6.0;
 import "./IERC20.sol";
+
 
 /**
  * @dev Interface of the ERC20 standard as defined in the EIP.

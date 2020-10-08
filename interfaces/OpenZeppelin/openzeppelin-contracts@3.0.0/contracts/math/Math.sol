@@ -1,4 +1,4 @@
-pragma solidity ^0.7.0;
+pragma solidity ^0.6.0;
 
 /**
  * @dev Standard math utilities missing in the Solidity language.
@@ -24,6 +24,6 @@ library Math {
      */
     function average(uint256 a, uint256 b) internal pure returns (uint256) {
         // (a + b) / 2 can overflow, so we distribute
-        return (a / 2) + (b / 2) + (((a % 2) + (b % 2)) / 2);
+        return (a / 2) + (b / 2) + ((a % 2 + b % 2) / 2);
     }
 }
