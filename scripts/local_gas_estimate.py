@@ -7,23 +7,30 @@ def main():
 
     transfer = Transfer.deploy({"from": accounts[0]})
     print(f"Gas used to deploy the contract {transfer.tx.gas_used}")
+    print(f"------------------------------------------------------")
 
     t = accounts[0].transfer(transfer.address, 10**18)
     print(f"Gas used to pay ETH {t.gas_used}")
+    print(f"------------------------------------------------------")
 
     t = transfer.transfer(ZERO_ADDRESS, accounts[1], 10**17, {'from': accounts[0]})
     print(f"Gas used to pay ETH using the contract contract {t.gas_used}")
+    print(f"------------------------------------------------------")
 
     t = transfer.transferAndDestruct(ZERO_ADDRESS, accounts[1], 10**17, {'from': accounts[0]})
     print(f"Gas used to pay ETH by destoying the contract {t.gas_used}")
+    print(f"------------------------------------------------------")
 
     # Token gas usage
     transfer = Transfer.deploy({"from": accounts[0]})
     t = token.transfer(transfer.address, 10**18, {'from':accounts[1]})
     print(f"Gas used to send ERC20 to a contract {t.gas_used}")
+    print(f"------------------------------------------------------")
 
     t = transfer.transfer(token.address, accounts[1], 10**17, {'from': accounts[0]})
     print(f"Gas used to send ERC20 using the contract {t.gas_used}")
+    print(f"------------------------------------------------------")
 
     t = transfer.transferAndDestruct(token.address, accounts[1], 10**17, {'from': accounts[0]})
     print(f"Gas used to send ERC20 by destoying the contract {t.gas_used}")
+    print(f"------------------------------------------------------")
