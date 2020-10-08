@@ -1,0 +1,8 @@
+__pycache__
+**venv
+**.vscode
+build/
+reports/
+**bin
+**.pytest_cache
+*.pyc
