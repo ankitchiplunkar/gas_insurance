@@ -18,6 +18,7 @@ def main():
     print(f"Gas used to pay ETH by destoying the contract {t.gas_used}")
 
     # Token gas usage
+    transfer = Transfer.deploy({"from": accounts[0]})
     t = token.transfer(transfer.address, 10**18, {'from':accounts[1]})
     print(f"Gas used to send ERC20 to a contract {t.gas_used}")
 
